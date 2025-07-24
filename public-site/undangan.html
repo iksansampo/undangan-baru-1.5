@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Link ke file tema akan ditambahkan oleh JS -->
+</head>
+<body>
+
+    <audio id="background-music" loop></audio>
+
+    <div id="opening-screen">
+        <div class="opening-content">
+            <h1 id="opening-title">The Wedding of</h1>
+            <h2 id="opening-couple-names"></h2>
+            <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+            <h3 id="guest-name">Nama Tamu</h3>
+            <button id="open-invitation" class="btn btn-primary">Buka Undangan</button>
+        </div>
+    </div>
+
+    <!-- **PENTING**: Wrapper untuk semua seksi yang akan diurutkan -->
+    <div id="invitation-content" class="d-none">
+        
+        <!-- Setiap section harus punya ID yang sesuai dengan di InvitationForm.js -->
+        <!-- Urutan di HTML ini tidak penting, JS yang akan mengatur -->
+
+        <section id="cover" class="invitation-section text-center">
+            <img id="cover-image" src="" class="img-fluid" alt="Cover Photo">
+            <h1 id="cover-title"></h1>
+            <p>Kami mengundang Anda untuk merayakan pernikahan kami</p>
+        </section>
+
+        <section id="mempelai" class="invitation-section text-center">
+            <h2>Mempelai</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <img id="bride-photo" src="" class="rounded-circle" alt="Mempelai Wanita" width="150" height="150">
+                    <h3 id="bride-name"></h3>
+                    <p>Putri dari Bapak <span id="bride-father"></span> & Ibu <span id="bride-mother"></span></p>
+                </div>
+                <div class="col-md-6">
+                    <img id="groom-photo" src="" class="rounded-circle" alt="Mempelai Pria" width="150" height="150">
+                    <h3 id="groom-name"></h3>
+                    <p>Putra dari Bapak <span id="groom-father"></span> & Ibu <span id="groom-mother"></span></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="acara" class="invitation-section text-center">
+            <h2>Acara</h2>
+            <div id="events-container" class="row">
+                <!-- Konten acara akan diisi oleh JS -->
+            </div>
+            <div id="countdown" class="mt-4">
+                <h4>Menuju Hari Bahagia:</h4>
+                <div id="timer"></div>
+            </div>
+        </section>
+
+        <section id="gallery" class="invitation-section text-center">
+            <h2>Galeri Foto & Video</h2>
+            <div id="gallery-container" class="row">
+                <!-- Konten galeri akan diisi oleh JS -->
+            </div>
+        </section>
+
+        <section id="cerita" class="invitation-section">
+            <h2 class="text-center">Cerita Cinta Kami</h2>
+            <div id="story-container">
+                <!-- Konten cerita akan diisi oleh JS -->
+            </div>
+        </section>
+
+        <section id="amplop" class="invitation-section text-center">
+            <h2>Amplop Digital</h2>
+            <p>Doa restu Anda merupakan karunia yang sangat berarti bagi kami. Dan jika memberi adalah ungkapan tanda kasih, Anda dapat memberi kado secara cashless.</p>
+            <div id="gift-container" class="row">
+                <!-- Konten amplop akan diisi oleh JS -->
+            </div>
+        </section>
+
+        <section id="rsvp" class="invitation-section">
+            <h2 class="text-center">Konfirmasi Kehadiran</h2>
+            <form id="rsvp-form">
+                <input type="hidden" id="invitation-id-rsvp" name="invitation_id">
+                <div class="mb-3">
+                    <label for="guest-name-rsvp" class="form-label">Nama</label>
+                    <input type="text" class="form-control" id="guest-name-rsvp" name="guest_name" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Kehadiran</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="attendance" id="attending" value="Hadir" required>
+                        <label class="form-check-label" for="attending">Hadir</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="attendance" id="not-attending" value="Tidak Hadir">
+                        <label class="form-check-label" for="not-attending">Tidak Hadir</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="message-rsvp" class="form-label">Ucapan & Doa</label>
+                    <textarea class="form-control" id="message-rsvp" name="message" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Kirim</button>
+            </form>
+            <div id="rsvp-list" class="mt-4">
+                <h4>Ucapan dari Tamu:</h4>
+                <!-- Daftar ucapan akan diisi oleh JS -->
+            </div>
+        </section>
+
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
